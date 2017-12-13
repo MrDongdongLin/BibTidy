@@ -4,7 +4,7 @@
 # IEEE
 ## 格式举例
 
-```
+```bib
 @ARTICLE{7999153, 
 author={C. Li and D. Lin and J. L\"u}, 
 journal={IEEE MultiMedia}, 
@@ -22,7 +22,7 @@ month={},}
 
 ## 处理后
 
-```
+```bib
 @article{ieee,
 	author		= {C. Li and D. Lin and J. L\"u},
 	title		= {Cryptanalyzing an Image-Scrambling Encryption Algorithm of Pixel Bits},
