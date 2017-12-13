@@ -68,6 +68,6 @@ month={},}
 - 添加文件：`add: Filename, Functional description (based on which version).`
 - 更新文件：`update: Filename, Functional description (based on which version).`
 - 删除文件：`delete: Filename, why? (based on which version).`
-- 文件结构变动：`change: Description that what changes you made.`
+- 文件结构变动：`change: Description of what changes you made.`
 
 如有多种更改，格式可以是`add: xxx; update: xxx.`
