@@ -1,4 +1,33 @@
 # BibTidy
+## 输入格式
+待处理bib文件。这里bib文件可分为两种：
+
+- 鱼龙混杂型
+什么类型的都有，有从IEEE上导出的（见下方格式举例），有从ACM上导出的，也有从Elsevier上导出的等等。
+
+- 统一型
+绝大部分bibtex都能从Web of Science上导出，这类bib文件格式是统一的。
+
+## 文件处理
+
+- 正则匹配到对应字段的，就写到文件，否则删去该字段（字段的定义见下方输出格式）。
+
+## 输出格式
+
+使用结构体保存匹配到的字段，结构体（article）的定义为
+```go
+type OutBib struct {
+	Author  string
+	Title   string
+	Journal string
+	Year    string
+	Volume  string
+	Number  string
+	Pages   string
+}
+```
+
+## 关键字
 整理bib文件；字符串；正则表达式；Go语言
 
 # IEEE
@@ -34,3 +63,11 @@ month={},}
 }
 ```
 
+# PR规范
+
+- 添加文件：`add: Filename, Functional description (based on which version).`
+- 更新文件：`update: Filename, Functional description (based on which version).`
+- 删除文件：`delete: Filename, why? (based on which version).`
+- 文件结构变动：`change: Description that what changes you made.`
+
+如有多种更改，格式可以是`add: xxx; update: xxx.`

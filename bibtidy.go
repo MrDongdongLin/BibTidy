@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// OutBib
+// TODO
 type OutBib struct {
 	Author  string
 	Title   string
