@@ -1,110 +1,113 @@
-package fp
-
-import (
-	"fmt"
-	"io/ioutil"
-	"os"
-	"regexp"
-	"strings"
-)
-
 // This package includes some struct of BibTeX item and some file process functions.
 
 // TODO: This package is continual update. There are many types of bib item, such as "article", "book", "inbook"
 // and so on. All these types can be found through the software "WinEdt" (https://www.baidu.com/link?url=3esIj9SvXmByNPMbHZD51jApdwQUwGfOZy4x1xWw_Ue&wd=&eqid=eac100740000222e000000065a3229a0).
 // You can check these items by "Insert" -> "BibTeX Items".
 
-// ArticleBib is the objective struct of type "article" in output xxx.bib file.
-type Article struct {
-	Author  string
-	Title   string
-	Journal string
-	Year    string
-	Volume  string
-	Number  string
-	Pages   string
-}
+package fp
 
-// InprocBib is the objective struct of type "inproceedings" in output xxx.bib file.
-type Inproc struct {
-	Author    string
-	Title     string
-	Booktitle string
-	Series    string
-	Volume    string
-	Year      string
-	Pages     string
-}
+import (
+	"bufio"
+	"log"
+	"os"
+	"regexp"
+	"strings"
+)
 
-// InBookBib is the objective struct of type "inbook" in output xxx.bib file.
-type InBook struct {
-	Author    string
-	Editor    string
-	Title     string
-	Publisher string
-	Series    string
-	Volume    string
-	Year      string
-	Pages     string
-}
+// item types
+var (
+	rArticle = regexp.MustCompile("@(?i:article)")
+	rBook    = regexp.MustCompile("@book")
+	rInbook  = regexp.MustCompile("@inbook")
+	rProc    = regexp.MustCompile("@proceedings")
+	rInporc  = regexp.MustCompile("@inproceedings")
+	rInclec  = regexp.MustCompile("@incollection")
+	rBooklet = regexp.MustCompile("@booklet")
+	rManual  = regexp.MustCompile("@manual")
+	rReport  = regexp.MustCompile("@techreport")
+	rConfer  = regexp.MustCompile("@conference")
+	rPhd     = regexp.MustCompile("@phdthesis")
+	rMaster  = regexp.MustCompile("@masterthesis")
+	rMisc    = regexp.MustCompile("@misc")
+	rUnpub   = regexp.MustCompile("@unpublished")
+)
 
-// bibRead read the original bib file and return its content with a string.
+var (
+	rAuthor    = regexp.MustCompile("author={.*}")
+	rTitle     = regexp.MustCompile("title={.*}")
+	rBookTitle = regexp.MustCompile("booktitle={.*}")
+	rSeries    = regexp.MustCompile("series={.*}")
+	rEditor    = regexp.MustCompile("editor={.*}")
+	rPublisher = regexp.MustCompile("publisher={.*}")
+	rJournal   = regexp.MustCompile("journal={.*}")
+	rYear      = regexp.MustCompile("year={.*}")
+	rVolume    = regexp.MustCompile("volume={.*}")
+	rNumber    = regexp.MustCompile("number={.*}")
+	rPages     = regexp.MustCompile("pages={.*}")
+)
+
+var rLast = regexp.MustCompile(",}")
+
+// BibScan read the original bib file and return its content with a string.
 /*
- * vargin:  path of the original bib, string
- * vargout: content of the bib file, string
  * author:  Dongdong Lin
- * time:    2017-12-14 16:00
+ * time:    2017-12-15 22:00
  */
-func BibRead(path string) string {
-	fin, err := ioutil.ReadFile(path)
+func BibScan(pin string, pout string) {
+	// Open a bib file
+	fin, err := os.Open(pin)
 	if err != nil {
-		fmt.Print(err)
+		log.Fatal(err)
 	}
-	content := string(fin)
-	return content
-}
+	defer fin.Close()
 
-func EditArticle(str string) Article {
-	r, _ := regexp.Compile("author={.*}")
-	author := r.FindString(str)
-	r, _ = regexp.Compile("title={.*}")
-	title := r.FindString(str)
-	r, _ = regexp.Compile("journal={.*}")
-	journal := r.FindString(str)
-	r, _ = regexp.Compile("year={.*}")
-	year := r.FindString(str)
-	r, _ = regexp.Compile("volume={.*}")
-	volume := r.FindString(str)
-	r, _ = regexp.Compile("number={.*}")
-	number := r.FindString(str)
-	r, _ = regexp.Compile("pages={.*}")
-	pages := r.FindString(str)
-
-	article := Article{Author: author, Title: title, Journal: journal, Year: year, Volume: volume, Number: number, Pages: pages}
-
-	return article
-}
-
-func WriteArticle(article Article, pout string) {
+	// Create a bib file
 	fout, err := os.Create(pout)
-	defer fout.Close()
 	if err != nil {
-		fmt.Println(pout, err)
+		log.Fatal(err)
 	}
-	fout.WriteString("@article{ieee,\r\n")
-	v := strings.Split(article.Author, "=")
-	fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
-	v = strings.Split(article.Title, "=")
-	fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
-	v = strings.Split(article.Journal, "=")
-	fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
-	v = strings.Split(article.Year, "=")
-	fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
-	v = strings.Split(article.Volume, "=")
-	fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
-	v = strings.Split(article.Number, "=")
-	fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
-	v = strings.Split(article.Pages, "=")
-	fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
-	fout.WriteString("}\r\n\r\n")
+	defer fout.Close()
+
+	// Scan the file line by line
+	scanner := bufio.NewScanner(fin)
+	for scanner.Scan() {
+		line := string(scanner.Text())
+		if sArticle := rArticle.FindString(line); sArticle != "" {
+			fout.WriteString(strings.ToLower(sArticle) + "\r\n")
+			for scanner.Scan() {
+				line = string(scanner.Text())
+				if sAuthor := rAuthor.FindString(line); sAuthor != "" {
+					v := strings.Split(sAuthor, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sTitle := rTitle.FindString(line); sTitle != "" {
+					v := strings.Split(sTitle, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sJournal := rJournal.FindString(line); sJournal != "" {
+					v := strings.Split(sJournal, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sYear := rYear.FindString(line); sYear != "" {
+					v := strings.Split(sYear, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sVolume := rVolume.FindString(line); sVolume != "" {
+					v := strings.Split(sVolume, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sNumber := rNumber.FindString(line); sNumber != "" {
+					v := strings.Split(sNumber, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sPages := rPages.FindString(line); sPages != "" {
+					v := strings.Split(sPages, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if slast := rLast.FindString(line); slast != "" {
+					fout.WriteString("}\r\n")
+				} else {
+					continue
+				}
+			}
+		}
+
+	}
+
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
 }
