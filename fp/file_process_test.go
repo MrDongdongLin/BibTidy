@@ -7,7 +7,7 @@ import (
 func Test_bibRead(t *testing.T) {
 	pin := "../../data/ieee.bib"
 	pout := "../../out.bib"
-	content := bibRead(pin)
-	article := editArticle(content)
-	writeArticle(article, pout)
+	content := BibRead(pin)
+	article := EditArticle(content)
+	WriteArticle(article, pout)
 }

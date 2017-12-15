@@ -55,7 +55,7 @@ type InBook struct {
  * author:  Dongdong Lin
  * time:    2017-12-14 16:00
  */
-func bibRead(path string) string {
+func BibRead(path string) string {
 	fin, err := ioutil.ReadFile(path)
 	if err != nil {
 		fmt.Print(err)
@@ -64,7 +64,7 @@ func bibRead(path string) string {
 	return content
 }
 
-func editArticle(str string) Article {
+func EditArticle(str string) Article {
 	r, _ := regexp.Compile("author={.*}")
 	author := r.FindString(str)
 	r, _ = regexp.Compile("title={.*}")
@@ -85,7 +85,7 @@ func editArticle(str string) Article {
 	return article
 }
 
-func writeArticle(article Article, pout string) {
+func WriteArticle(article Article, pout string) {
 	fout, err := os.Create(pout)
 	defer fout.Close()
 	if err != nil {
