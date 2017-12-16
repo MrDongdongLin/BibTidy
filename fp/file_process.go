@@ -16,34 +16,34 @@ import (
 
 // item types
 var (
-	rArticle = regexp.MustCompile("@(?i:article)")
-	rBook    = regexp.MustCompile("@book")
-	rInbook  = regexp.MustCompile("@inbook")
-	rProc    = regexp.MustCompile("@proceedings")
-	rInporc  = regexp.MustCompile("@inproceedings")
-	rInclec  = regexp.MustCompile("@incollection")
-	rBooklet = regexp.MustCompile("@booklet")
-	rManual  = regexp.MustCompile("@manual")
-	rReport  = regexp.MustCompile("@techreport")
-	rConfer  = regexp.MustCompile("@conference")
-	rPhd     = regexp.MustCompile("@phdthesis")
-	rMaster  = regexp.MustCompile("@masterthesis")
-	rMisc    = regexp.MustCompile("@misc")
-	rUnpub   = regexp.MustCompile("@unpublished")
+	rArticle = regexp.MustCompile("@(?i:article){.*")
+	rBook    = regexp.MustCompile("@(?i:book){.*")
+	rInbook  = regexp.MustCompile("@(?i:inbook){.*")
+	rProc    = regexp.MustCompile("@(?i:proceedings){.*")
+	rInporc  = regexp.MustCompile("@(?i:inproceedings){.*")
+	rInclec  = regexp.MustCompile("@(?i:incollection){.*")
+	rBooklet = regexp.MustCompile("@(?i:booklet){.*")
+	rManual  = regexp.MustCompile("@(?i:manual){.*")
+	rReport  = regexp.MustCompile("@(?i:techreport){.*")
+	rConfer  = regexp.MustCompile("@(?i:conference){.*")
+	rPhd     = regexp.MustCompile("@(?i:phdthesis){.*")
+	rMaster  = regexp.MustCompile("@(?i:masterthesis){.*")
+	rMisc    = regexp.MustCompile("@(?i:misc){.*")
+	rUnpub   = regexp.MustCompile("@(?i:unpublished){.*")
 )
 
 var (
-	rAuthor    = regexp.MustCompile("author={.*}")
-	rTitle     = regexp.MustCompile("title={.*}")
-	rBookTitle = regexp.MustCompile("booktitle={.*}")
-	rSeries    = regexp.MustCompile("series={.*}")
-	rEditor    = regexp.MustCompile("editor={.*}")
-	rPublisher = regexp.MustCompile("publisher={.*}")
-	rJournal   = regexp.MustCompile("journal={.*}")
-	rYear      = regexp.MustCompile("year={.*}")
-	rVolume    = regexp.MustCompile("volume={.*}")
-	rNumber    = regexp.MustCompile("number={.*}")
-	rPages     = regexp.MustCompile("pages={.*}")
+	rAuthor    = regexp.MustCompile("(?i:author)={.*}")
+	rTitle     = regexp.MustCompile("(?i:title)={.*}")
+	rBookTitle = regexp.MustCompile("(?i:booktitle)={.*}")
+	rSeries    = regexp.MustCompile("(?i:series)={.*}")
+	rEditor    = regexp.MustCompile("(?i:editor)={.*}")
+	rPublisher = regexp.MustCompile("(?i:publisher)={.*}")
+	rJournal   = regexp.MustCompile("(?i:journal)={.*}")
+	rYear      = regexp.MustCompile("(?i:year)={.*}")
+	rVolume    = regexp.MustCompile("(?i:volume)={.*}")
+	rNumber    = regexp.MustCompile("(?i:number)={.*}")
+	rPages     = regexp.MustCompile("(?i:pages)={.*}")
 )
 
 var rLast = regexp.MustCompile(",}")
@@ -99,6 +99,39 @@ func BibScan(pin string, pout string) {
 					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
 				} else if slast := rLast.FindString(line); slast != "" {
 					fout.WriteString("}\r\n")
+					break
+				} else {
+					continue
+				}
+			}
+		} else if sInproc := rInporc.FindString(line); sInproc != "" {
+			fout.WriteString(strings.ToLower(sInproc) + "\r\n")
+			for scanner.Scan() {
+				line = string(scanner.Text())
+				if sAuthor := rAuthor.FindString(line); sAuthor != "" {
+					v := strings.Split(sAuthor, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sBookTitle := rBookTitle.FindString(line); sBookTitle != "" {
+					v := strings.Split(sBookTitle, "=")
+					fout.WriteString("\t" + v[0] + "\t" + "= " + v[1] + ",\r\n")
+				} else if sTitle := rTitle.FindString(line); sTitle != "" {
+					v := strings.Split(sTitle, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sYear := rYear.FindString(line); sYear != "" {
+					v := strings.Split(sYear, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sVolume := rVolume.FindString(line); sVolume != "" {
+					v := strings.Split(sVolume, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sSeries := rSeries.FindString(line); sSeries != "" {
+					v := strings.Split(sSeries, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if sPages := rPages.FindString(line); sPages != "" {
+					v := strings.Split(sPages, "=")
+					fout.WriteString("\t" + v[0] + "\t\t" + "= " + v[1] + ",\r\n")
+				} else if slast := rLast.FindString(line); slast != "" {
+					fout.WriteString("}\r\n")
+					break
 				} else {
 					continue
 				}
