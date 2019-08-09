@@ -1,6 +1,8 @@
 ## BibTidy
 BibTidy is a bibliography file clean up application. A `.bib` file often contains many kinds of items that exported from different acadamic document databases. Such a file in a mess is difficult to read, modify and use. BibTidy can help you to clean up your `.bib` file such that you can use it directly or with slight modification.
 
+**NOTE THAT** we only support UTF-8 encoding file.
+
 ## Quick start
 (TODO) Download the package and replace the path of your input `.bib` file and the path of your output `.bib` file, and then build it to get executable file `bibtidy.exe`. Run this executable file and the clean up file will be obtained.
 

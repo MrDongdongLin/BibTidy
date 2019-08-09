@@ -1,0 +1,344 @@
+@article{1,
+  author =       {Li, Chengqing and Li, Shujun and Asim, Muhammad and Nunez, Juana and Alvarez, Gonzalo and Chen, Guanrong},
+  journal =      {Image and Vision Computing},
+  pages =        {1371--1381},
+  publisher =    {Elsevier B.V.},
+  title =        {{On the security defects of an image encryption scheme}},
+  volume =       {27},
+  year =         {2009}
+}
+
+@article{2,
+  author =       {Ye, Guo Dong and Huang, Xiao Ling and Zhang, Leo Yu and Wang, Zheng Xia},
+  journal =      {Chinese Physics B},
+  pages =        {010501},
+  title =        {{A self-cited pixel summation based image encryption algorithm}},
+  volume =       {26},
+  year =         {2017}
+}
+
+@article{3,
+  author =       {Luo, Yuling and Du, Minghui and Liu, Junxiu},
+  journal =      {Communications in Nonlinear Science and Numerical Simulation},
+  pages =        {447--460},
+  title =        {{A symmetrical image encryption scheme in wavelet and time domain}},
+  volume =       {20},
+  year =         {2014}
+}
+
+@article{4,
+  author =       {Luo, Yuling and Cao, Lvchen and Qiu, Senhui and Lin, Hui and Harkin, Jim and Liu, Junxiu},
+  journal =      {Nonlinear Dynamics},
+  pages =        {2293--2310},
+  title =        {{A chaotic map-control-based and the plain image-related cryptosystem}},
+  volume =       {83},
+  year =         {2016}
+}
+
+@article{5,
+  author =       {Matthews, Robert},
+  journal =      {Cryptologia},
+  number =       {1},
+  pages =        {29--42},
+  title =        {{on the Derivation of a ¡°Chaotic¡± Encryption Algorithm}},
+  volume =       {13},
+  year =         {1989}
+}
+
+@article{6,
+  author =       {Hua, Zhongyun and Zhou, Yicong},
+  journal =      {Information Sciences},
+  pages =        {237--253},
+  title =        {{Image encryption using 2D Logistic-adjusted-Sine map}},
+  volume =       {339},
+  year =         {2016}
+}
+
+@article{7,
+  author =       {Chai, Xiu Li and Gan, Zhi Hua and Yuan, Ke and Lu, Yang and Chen, Yi Ran},
+  journal =      {Chinese Physics B},
+  title =        {{An image encryption scheme based on three-dimensional Brownian motion and chaotic system}},
+  volume =       {26},
+  year =         {2017}
+}
+
+@article{8,
+  author =       {Wei, Xiaopeng and Guo, Ling and Zhang, Qiang and Zhang, Jianxin and Lian, Shiguo},
+  journal =      {Journal of Systems and Software},
+  pages =        {290--299},
+  volume =       {85},
+  year =         {2012}
+}
+
+@article{9,
+  author =       {Gu, Guosheng and Ling, Jie},
+  journal =      {Optik - International Journal for Light and Electron Optics},
+  pages =        {4700--4705},
+  publisher =    {Elsevier GmbH.},
+  title =        {{Optik A fast image encryption method by using chaotic 3D cat maps}},
+  volume =       {125},
+  year =         {2014}
+}
+
+@article{10,
+  author =       {Kadir, Abdurahman and Hamdulla, Askar and Guo, Wen Qiang},
+  journal =      {Optik},
+  pages =        {1671--1675},
+  title =        {{Color image encryption using skew tent map and hyper chaotic system of 6th-order CNN}},
+  volume =       {125},
+  year =         {2014}
+}
+
+@article{11,
+  author =       {{Yaghouti Niyat}, Abolfazl and Moattar, Mohammad Hossein and {Niazi Torshiz}, Masood},
+  journal =      {Optics and Lasers in Engineering},
+  pages =        {225--237},
+  title =        {{Color image encryption based on hybrid hyper-chaotic system and cellular automata}},
+  volume =       {90},
+  year =         {2017}
+}
+
+@article{12,
+  author =       {Li, Chengqing and Lo, Kwok Tung},
+  journal =      {Signal Processing},
+  pages =        {949--954},
+  title =        {{Optimal quantitative cryptanalysis of permutation-only multimedia ciphers against plaintext attacks}},
+  volume =       {91},
+  year =         {2011}
+}
+
+@article{13,
+  author =       {Li, Chengqing and Li, Shujun and Chen, Guanrong and Halang, Wolfgang a.},
+  journal =      {Image and Vision Computing},
+  pages =        {1035--1039},
+  title =        {{Cryptanalysis of an image encryption scheme based on a compound chaotic sequence}},
+  volume =       {27},
+  year =         {2009}
+}
+
+@article{14,
+  author =       {Mirzaei, Omid and Yaghoobi, Mahdi and Irani, Hassan},
+  journal =      {Nonlinear Dynamics},
+  pages =        {557--566},
+  title =        {{A new image encryption method: Parallel sub-image encryption with hyper chaos}},
+  volume =       {67},
+  year =         {2012}
+}
+
+@article{15,
+  author =       {Wang, Xing Yuan and Zhang, Ying Qian and Liu, Lin Tao},
+  journal =      {Optics and Lasers in Engineering},
+  pages =        {248--254},
+  title =        {{An enhanced sub-image encryption method}},
+  volume =       {86},
+  year =         {2016}
+}
+
+@article{16,
+  author =       {Fu, Chong and Meng, Wei-hong and Zhan, Yong-feng and Zhu, Zhi-liang and Lau, Francis C M and Tse, Chi K and Ma, Hong-feng},
+  journal =      {Computers in biology and medicine},
+  pages =        {1000--10},
+  title =        {{An efficient and secure medical image protection scheme based on chaotic maps}},
+  volume =       {43},
+  year =         {2013}
+}
+
+@article{17,
+  author =       {Chen, Lei and Wang, Shihong},
+  journal =      {Computers in Biology and Medicine},
+  pages =        {69--75},
+  title =        {{Differential cryptanalysis of a medical image cryptosystem with multiple rounds}},
+  volume =       {65},
+  year =         {2015}
+}
+
+@article{18,
+  author =       {Huang, R and Rhee, K. and Uchida, S.},
+  journal =      {Multimedia Tools and Applications},
+  pages =        {71--93},
+  title =        {{A Parallel Image Encryption Method Based on Compressive Sensing}},
+  volume =       {72},
+  year =         {2014}
+}
+
+@article{19,
+  author =       {{Kamel Mohamed}, Faraoun},
+  journal =      {Engineering Science and Technology, an International Journal},
+  pages =        {85--94},
+  title =        {{A parallel block-based encryption schema for digital images using reversible cellular automata}},
+  volume =       {17},
+  year =         {2014}
+}
+
+@article{20,
+  author =       {Qiu, Han and Memmi, Gerard},
+  journal =      {2014 IEEE International Symposium on Multimedia},
+  pages =        {155--158},
+  title =        {{Fast selective encryption method for bitmaps based on GPU acceleration}},
+  year =         {2014}
+}
+
+@article{21,
+  author =       {Xie, K. and Wu, P. and Yang, S.},
+  journal =      {Electronics Letters},
+  pages =        {1196},
+  title =        {{GPU and CPU cooperation parallel visualisation for large seismic data}},
+  volume =       {46},
+  year =         {2010}
+}
+
+@article{22,
+  author =       {Lee, Jieun and Yi, Faliu and Saifullah, Rao and Moon, Inkyu},
+  journal =      {Optical Engineering},
+  keywords =     {cryptography,discrete optical signal processing,graphics process-,image security,optical encryption,parallel computing},
+  pages =        {112308},
+  title =        {{Graphics processing unit¨Caccelerated double random phase encoding for fast image encryption}},
+  volume =       {53},
+  year =         {2014}
+}
+
+@inproceedings{23,
+  author =       {Saikumar, Nooka},
+  pages =        {1--3},
+  publisher =    {2016 International Conference on Circuit, Power and Computing Technologies [ICCPCT]},
+  title =        {{An Encryption Approach for Security Enhancement in Images using Key Based Partitioning Technique}},
+  year =         {2016}
+}
+
+@article{24,
+  author =       {Li, Yueping and Wang, Chunhua and Chen, Hua},
+  journal =      {Optics and Lasers in Engineering},
+  pages =        {238--246},
+  title =        {{A hyper-chaos-based image encryption algorithm using pixel-level permutation and bit-level permutation}},
+  volume =       {90},
+  year =         {2017}
+}
+
+@article{25,
+  author =       {Huang, Xiaoling and Ye, Guodong},
+  journal =      {Multimedia Tools and Applications},
+  pages =        {57--70},
+  title =        {{An image encryption algorithm based on hyper-chaos and DNA sequence}},
+  volume =       {72},
+  year =         {2014}
+}
+
+@article{26,
+  author =       {Zhu, Congxu},
+  journal =      {Optics Communications},
+  pages =        {29--37},
+  title =        {{A novel image encryption scheme based on improved hyperchaotic sequences}},
+  volume =       {285},
+  year =         {2012}
+}
+
+@article{27,
+  author =       {Zheng, Yifeng and Jin, Jianxiu},
+  journal =      {Multimedia Tools and Applications},
+  pages =        {7803--7820},
+  title =        {{A novel image encryption scheme based on Henon map and compound spatiotemporal chaos}},
+  volume =       {74},
+  year =         {2014}
+}
+
+@article{28,
+  author =       {Singh, Hukum and Yadav, A. K. and Vashisth, Sunanda and Singh, Kehar},
+  journal =      {Optics and Lasers in Engineering},
+  pages =        {145--156},
+  title =        {{Double phase-image encryption using gyrator transforms, and structured phase mask in the frequency plane}},
+  volume =       {67},
+  year =         {2015}
+}
+
+@article{29,
+  author =       {Chai, Xiuli and Chen, Yiran and Broyde, Lucie},
+  journal =      {Optics and Lasers in Engineering},
+  pages =        {53--61},
+  title =        {{A novel chaotic image encryption scheme using DNA sequence operations}},
+  volume =       {73},
+  year =         {2015}
+}
+
+@article{30,
+  author =       {Chen, Junxin and Zhu, Zhiliang and Fu, Chong and Zhang, Libo and Yu, Hai},
+  doi =          {10.1016/j.optlaseng.2014.08.010},
+  journal =      {Optics and Lasers in Engineering},
+  pages =        {1--9},
+  title =        {{Analysis and improvement of a double-image encryption scheme using pixel scrambling technique in gyrator domains}},
+  volume =       {66},
+  year =         {2015}
+}
+
+@article{31,
+  author =       {Wang, Xingyuan and Yang, Lei and Liu, Rong and Kadir, Abdurahman},
+  journal =      {Nonlinear Dynamics},
+  pages =        {615--621},
+  title =        {{A chaotic image encryption algorithm based on perceptron model}},
+  volume =       {62},
+  year =         {2010}
+}
+
+@article{32,
+  author =       {Dong, Chang'E},
+  journal =      {Signal Processing: Image Communication},
+  pages =        {628--640},
+  title =        {{Color image encryption using one-time keys and coupled chaotic systems}},
+  volume =       {29},
+  year =         {2014}
+}
+
+@article{33,
+  author =       {Wang, Xingyuan and Zhang, Huili and Zhang, Yushu and Xiao, Di and Zhang, Wei and Wong, Kwok-wo and Yu, Hai and Zhu, Zhiliang and Zhao, Yuli and Zhu, Zhiliang and Tang, Zhenjun and Song, Juan and Zhang, Xianquan and Sun, Ronghai and Zhang, Yushu and Wang, Xingyuan},
+  journal =      {Communications in Nonlinear Science and Numerical Simulation},
+  pages =        {36--50},
+  title =        {{Analysis and improvement of a chaos-based symmetric image encryption scheme using a bit-level permutation}},
+  volume =       {77},
+  year =         {2014}
+}
+
+@article{34,
+  author =       {Murillo-Escobar, M.A. and Cruz-Hern{\'{a}}ndez, C. and Abundiz-P{\'{e}}rez, F. and L{\'{o}}pez-Guti{\'{e}}rrez, R.M. and Acosta-Del-Campo, O.R.},
+  journal =      {Signal Processing},
+  pages =        {119--131},
+  title =        {{A RGB image encryption algorithm based on total plain image characteristics and chaos}},
+  volume =       {109},
+  year =         {2015}
+}
+
+@article{35,
+  author =       {Zhu, Zhiliang and Zhang, Wei and Wong, Kwokwo and Yu, Hai},
+  journal =      {Information Sciences},
+  pages =        {1171--1186},
+  title =        {{A chaos-based symmetric image encryption scheme using a bit-level permutation}},
+  volume =       {181},
+  year =         {2011}
+}
+
+@article{36,
+  author =       {Abanda, Yannick and Tiedeu, Alain},
+  journal =      {IET Image Processing},
+  pages =        {742--750},
+  title =        {{Image encryption by chaos mixing}},
+  volume =       {10},
+  year =         {2016}
+}
+
+@article{37,
+  author =       {Choi, Jongseok and Seok, Seonhee and Seo, Hwajeong and Kim, Howon},
+  journal =      {Multimedia Tools and Applications},
+  pages =        {14685--14706},
+  publisher =    {Multimedia Tools and Applications},
+  title =        {{A fast ARX model-based image encryption scheme}},
+  volume =       {2},
+  year =         {2016}
+}
+
+@article{38,
+  author =       {Elgendy, Fatma and Sarhan, Amany M. and Eltobely, Tarek E. and El-Zoghdy, S. F. and El-sayed, Hala S. and Faragallah, Osama S.},
+  journal =      {Multimedia Tools and Applications},
+  pages =        {11529--11553},
+  title =        {{Chaos-based model for encryption and decryption of digital images}},
+  volume =       {75},
+  year =         {2016}
+}
+
